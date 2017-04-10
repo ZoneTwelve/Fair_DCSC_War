@@ -2,7 +2,22 @@
 <html>
 <head>
 <title><%= title %></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 <link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet" href="bootstrap//css/bootstrap.min.css">
+<style>
+.list{
+	-webkit-transition: 0.5s;
+}
+.list:hover{
+	font-size:200%;
+}
+</style>
+<script src="bootstrap/js/jquery.min.js"></script></head>
+<script src="bootstrap/js/bootstrap.min.js"></script></head>
 <script>
 var list;
 var xhttp = new XMLHttpRequest();
@@ -13,7 +28,7 @@ window.onload = function(){
 
 function createList(){
 	for(var i=0;i<list.length;i++){
-		document.getElementById("list").innerHTML += '<li><a href="'+list[i].href+'">'+list[i].name+'</a></li>'
+		document.getElementById("list").innerHTML += '<li class="list list-group-item">'+'<a href="'+list[i].href+'">'+list[i].name+'</a>'+'</li>'
 		console.log(list[i].name);
 	}
 }
@@ -31,8 +46,36 @@ function get_list_data(){
 </script>
 </head>
 <body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					遊戲中心 - 開發者:ZoneTwelve
+					<!-- <img id="title-img" alt="Brand" src="webSecurity.png"> -->
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+			</div>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a data-toggle="tab" href="#">遊戲中心</a></li>
+				<li><a href="javascript:alert('開發者是大帥哥<3');window.open('https://www.github.com/ZoneTwelve')">開發者GitHub</a></li>
+			</ul>
+			<!-- <ul class="nav navbar-nav navbar-right"> -->
+				<!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li> -->
+				<!-- <li><a href="#">Log out</a></li> -->
+				<!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Admin</a></li> -->
+			<!-- </ul> -->
+		</div>
+	</div>
+</nav>         
 	<h1>遊戲中心</h1>
-	<b>歡迎來到服務首頁</b>
-	<ul id="list"></ul>
+	<p class="lead">歡迎來到服務首頁</p>
+	<ul id="list" class="list-group"></ul>
 </body>
 </html>
