@@ -1,0 +1,13 @@
+body{
+    padding:0;
+    margin:0;
+    text-align:center;
+    position:absolute;
+    top:5%;
+    left:50%;
+    transform: translate(-50%,0);
+    background:black;
+}canvas{
+    border-radius: 15px;
+    background: darkgrey;
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<!war 太陽廢物>
+<html lang="en-US">
+<head>
+<title>Web hacker level <%= level %></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bootstrap//css/bootstrap.min.css">
+<script src="bootstrap/js/jquery.min.js"></script></head>
+<script src="bootstrap/js/bootstrap.min.js"></script></head>
+<style>
+#title-img{
+	position:relative;
+	top:-5px;
+	left:5px;
+	width:32px;
+	height:32px;
+}
+</style>
+<script>
+window.onload = function(){
+	setup();
+}
+function setup(){
+	document.getElementById("submit").onclick = function(){
+		checkPassword();
+	}
+}
+
+function checkPassword(){
+	var pwd = document.getElementById("pass").value
+	console.log("失敗owo")
+	if(pwd === "iloveb")
+		return location.href = "?level=2";
+	else
+		return alert("LOL");
+}
+</script>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					<img id="title-img" alt="Brand" src="webSecurity.png">
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+			</div>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a data-toggle="tab" href="/">遊戲中心 - Level <%= level %></a></li>
+				<li><a href="javascript:alert('開發者是大帥哥<3');window.open('https://www.github.com/ZoneTwelve')">開發者GitHub</a></li>
+				<li><a href="javascript:window.open('https://www.facebook.com/dacsc17th')">大安電研百7</a></li>
+				<li><a href="javascript:window.open('https://www.facebook.com/DAANSCS18th')">大安電研百8</a></li>
+			</ul>
+			<!-- <ul class="nav navbar-nav navbar-right"> -->
+				<!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li> -->
+				<!-- <li><a href="#">Log out</a></li> -->
+				<!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Admin</a></li> -->
+			<!-- </ul> -->
+		</div>
+	</div>
+</nav>         
+<div class="jumbotron container">
+<div class="form-group">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<h4>Level <%= level %> - Javascript</h4>
+		<input type="password" class="form-control" id="pass" placeholder="密碼">
+		<input type="button" class="btn btn-default" id="submit" value="登入">
+	</div>
+	<div class="col-sm-4"></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script>
+var list;
+var xhttp = new XMLHttpRequest();
+
+window.onload = function(){
+	get_list_data();
+}
+
+function createList(){
+	for(var i=0;i<list.length;i++){
+		document.getElementById("list").innerHTML += '<li><a href="'+list[i].href+'">'+list[i].name+'</a></li>'
+		console.log(list[i].name);
+	}
+}
+
+function get_list_data(){
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			list = JSON.parse(xhttp.responseText);
+			createList();
+		}
+	};
+	xhttp.open("GET", "game.list", true);
+	xhttp.send();
+}
+</script>
+</head>
+<body>
+	<h1>遊戲中心</h1>
+	<b>歡迎來到服務首頁</b>
+	<ul id="list"></ul>
+</body>
+</html>
