@@ -17,6 +17,16 @@
 	left:5px;
 	width:32px;
 	height:32px;
+}
+#title-img-circle{
+	position:relative;
+	top:116px;
+	left:50vw;
+	margin:auto;
+	margin-left:-64px;
+	width:32px;
+	height:32px;
+	z-index:1;
 }#pass{
 	position:relative;
 	top:0;
@@ -32,6 +42,7 @@ setInterval(function(){
 	var x = w * Math.cos((time/360)*(Math.PI*2));
 	var y = h * Math.sin((time/360)*(Math.PI*2));
 	document.getElementById("pass").style.transform = "translate("+x+"px,"+y+"px)";
+	document.getElementById("title-img-circle").style.transform = "translate("+x+"px,"+y+"px)";
 	time++;
 },5)
 
@@ -56,6 +67,7 @@ function checkPassword(){
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">
 					<img id="title-img" alt="Brand" src="webSecurity.png">
+					<img id="title-img-circle" alt="Brand" src="webSecurity.png">
 				</a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
