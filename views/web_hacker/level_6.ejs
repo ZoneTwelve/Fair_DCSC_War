@@ -1,0 +1,32 @@
+<!doctype html>
+<!war 太陽廢物>
+<html lang="en-US">
+<head>
+<title>Web hacker level <%= level %></title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+</head>
+<script>
+var pwd = '';
+var pass = 'i have new plugins';
+var word = "我將載入至第五關";
+window.onload = function(){
+	checkPassword();
+}
+
+function checkPassword(){
+	pwd = prompt("Level - 6: 請輸入密碼");
+	if(pass.substr(-7) == pwd)
+		location.href = "?level=7&&pass="+pwd;
+	else{
+		alert("debug")
+		history.go(-1);
+	}
+}
+</script>
+<body>
+<h1>Level <%= level %> - 無法進入畫面的痛苦</h1>
+</body>
+</html>
