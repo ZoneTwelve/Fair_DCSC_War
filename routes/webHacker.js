@@ -15,12 +15,17 @@ router.get('/', function(req, res){
 
 		case req.query.level === '5'&&req.query.pass === 'translate':
 			return res.render("web_hacker/level_5", {level:'5'});
-		
-		case req.query.level === '6'&&req.query.pass === '太陽87':
-			return res.send("您已經開發者的成為戰友,一起來說太陽是87");
-			// return res.render("web_hacker/level_6", {level:'6'});
 
-		default:return res.send("Fail");
+		case req.query.level === '6'&&req.query.pass === '太陽87':
+			return res.render("web_hacker/level_6", {level:'6'});
+
+		case req.query.level === '7'&&req.query.pass === 'plugins':
+			return res.render("web_hacker/level_7", {level:'7'});
+
+		case req.query.level === '8'&&req.query.pass === 'clickErrorIcon':
+			return res.render("web_hacker/level_8", {level:'8'});
+
+		default:return res.send("<h1>Fail</h1>");
 	}else
 		res.render("web_hacker/level_1", {level:'1'});
 	

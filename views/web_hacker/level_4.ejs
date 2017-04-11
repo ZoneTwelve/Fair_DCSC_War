@@ -8,8 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 <link rel="stylesheet" href="bootstrap//css/bootstrap.min.css">
-<script src="bootstrap/js/jquery.min.js"></script></head>
-<script src="bootstrap/js/bootstrap.min.js"></script></head>
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="sweetalert/dist/sweetalert.css" />
+<script src="sweetalert/dist/sweetalert.min.js"></script>
+</head>
 <style>
 #title-img{
 	position:relative;
@@ -79,7 +82,7 @@ function checkPassword(){
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a data-toggle="tab" href="/">遊戲中心 - Level <%= level %></a></li>
-				<li><a href="javascript:alert('開發者是大帥哥<3');window.open('https://www.github.com/ZoneTwelve')">開發者GitHub</a></li>
+				<li><a href="javascript:swal({title: '開發者是大帥哥<3',text:'確定前往GitHub?' , showCancelButton: true, confirmButtonColor: '#28FF28', confirmButtonText: '前往', closeOnConfirm: false, imageUrl: 'sweetalert/example/images/thumbs-up.jpg'},function(){window.open('https://www.github.com/ZoneTwelve')});">開發者GitHub</a></li>
 				<li><a href="javascript:window.open('https://www.facebook.com/dacsc17th')">大安電研百7</a></li>
 				<li><a href="javascript:window.open('https://www.facebook.com/DAANSCS18th')">大安電研百8</a></li>
 				<li><a href="javascript:alert('開發者是大帥哥 <3');">對不起我已經沒創意了</a></li>

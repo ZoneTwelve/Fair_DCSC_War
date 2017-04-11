@@ -7,9 +7,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-<link rel="stylesheet" href="bootstrap//css/bootstrap.min.css">
-<script src="bootstrap/js/jquery.min.js"></script></head>
-<script src="bootstrap/js/bootstrap.min.js"></script></head>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="sweetalert/dist/sweetalert.css" />
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="sweetalert/dist/sweetalert.min.js"></script>
+</head>
 <style>
 #title-img{
 	position:relative;
@@ -44,9 +47,20 @@ function setup(){
 function checkPassword(){
 	var pass = document.getElementById("ps").textContent;
 	pwd = document.getElementById("pass").value;
-	alert("您已經成為開發者的戰友");
-	if(pass == pwd)
-		location.href = "?level=6&&pass="+pwd;
+	if(pass == pwd){
+		swal({
+			title: "您已經成為開發者的戰友",
+			text: "下一關連結："+"?level=7&&pass="+pwd,
+			type: "success",
+			showCancelButton: true,
+			confirmButtonColor: "#28FF28",
+			confirmButtonText: "確定",
+			closeOnConfirm: false
+		},
+		function(){
+			location.href = "?level=6&&pass="+pwd;
+		});
+	}
 }
 </script>
 <body>
@@ -67,7 +81,7 @@ function checkPassword(){
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a data-toggle="tab" href="/">遊戲中心 - Level <%= level %></a></li>
-				<li><a href="javascript:alert('開發者是大帥哥<3');window.open('https://www.github.com/ZoneTwelve')">開發者GitHub</a></li>
+				<li><a href="javascript:swal({title: '開發者是大帥哥<3',text:'確定前往GitHub?' , showCancelButton: true, confirmButtonColor: '#28FF28', confirmButtonText: '前往', closeOnConfirm: false, imageUrl: 'sweetalert/example/images/thumbs-up.jpg'},function(){window.open('https://www.github.com/ZoneTwelve')});">開發者GitHub</a></li>
 				<li><a href="javascript:alert('開發者是大帥哥 <3');">對不起我已經沒創意了</a></li>
 			</ul>
 			<!-- <ul class="nav navbar-nav navbar-right"> -->
@@ -84,7 +98,7 @@ function checkPassword(){
 		<div class="col-sm-4">
 			<h4>Level <%= level %> - 與太陽的戰爭</h4>
 			<h6>備註:<b id="ps">太陽87</b></h6>
-			<input type="text" class="form-control" id="pass" placeholder="*********">
+			<input type="text" class="form-control" id="pass" placeholder="****">
 			<input type="button" class="btn btn-default" id="submit" value="登入">
 		</div>
 		<div class="col-sm-4"></div>
