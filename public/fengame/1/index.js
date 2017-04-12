@@ -89,6 +89,10 @@ function gameOver(){
     var msg = "Game Over";
     textSize(50);
     fill(0)
+    textSize(10);
+    text("太陽是廢物",20,20);
+    textSize(numofbombs*2)
+    text(mainMessage+"\r\n"+conversionSeconds(time)+"\t 等級:"+(floor(turn*100)-5),width/2 - textWidth(mainMessage)/2,50)
     text(msg+"\r\n生存: "+conversionSeconds(time),width/2 - textWidth(msg)/2,height/2);
 }
 

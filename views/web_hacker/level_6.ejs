@@ -21,7 +21,6 @@ function checkPassword(){
 	if(pass.substr(-7) == pwd)
 		location.href = "?level=7&&pass="+pwd;
 	else{
-		alert("debug")
 		history.go(-1);
 	}
 }
