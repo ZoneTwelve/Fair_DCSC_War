@@ -1,7 +1,6 @@
 # Fair_DCSC_War
 #太陽與我的戰爭
 #校慶網頁組遊戲
-<h1>change</h1>
 # Fair_DCSC_War
 #太陽與我的戰爭
 #校慶網頁組遊戲
